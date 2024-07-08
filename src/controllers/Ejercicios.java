@@ -28,7 +28,22 @@ public class Ejercicios {
      * frecuencia.
      */
     public static boolean areAnagrams(String str1, String str2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(str1.length() != str2.length()) return false;
+        HashMap<Character,Integer> anagramas = new HashMap<>();
+        HashMap<Character,Integer> anagramas2 = new HashMap<>();
+        
+        for(String clave: anagramas.keySet()){
+            
+        }
+
+
+        //Barrido para comparar los dos mapas
+        for(Character character: anagramas.keySet()){
+            for(Integer value : anagramas.values()){
+                System.out.println();
+            }
+        }
+        return true;
 
     }
 
