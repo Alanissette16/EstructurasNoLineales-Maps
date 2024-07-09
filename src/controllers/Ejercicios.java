@@ -32,18 +32,17 @@ public class Ejercicios {
         HashMap<Character,Integer> anagramas = new HashMap<>();
         HashMap<Character,Integer> anagramas2 = new HashMap<>();
         
-        for(String clave: anagramas.keySet()){
-            
+        //Barridos de strings y guardar la cantidad de cada caracter
+        //for al str1
+        for(Character stringchar: str1.toCharArray()){
+            anagramas.put(stringchar, anagramas.getOrDefault(anagramas2, 0)+1);
+        }
+        //for al str2
+        for(Character string2char: str1.toCharArray()){
+            anagramas2.put(string2char, anagramas2.getOrDefault(anagramas, 0)+1);
         }
 
-
-        //Barrido para comparar los dos mapas
-        for(Character character: anagramas.keySet()){
-            for(Integer value : anagramas.values()){
-                System.out.println();
-            }
-        }
-        return true;
+        return anagramas.equals(anagramas2);
 
     }
 
@@ -63,6 +62,20 @@ public class Ejercicios {
      * Output: null
      */
     public int[] sumatoriaDeDos(int[] nums, int objetivo) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        HashMap<Integer,Integer> sum = new HashMap<>();
+
+        int index = 0;
+        for(int num : nums){
+            int aux = objetivo - num;
+
+            if (sum.containsKey(aux)) {
+                return new int[] { sum.get(aux), index };
+            }
+            
+            sum.put(num, index++);
+        }
+
+        return null;
+        
     }
 }

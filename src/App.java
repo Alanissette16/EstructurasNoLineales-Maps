@@ -14,7 +14,7 @@ public class App {
         runEmpleadoExample();
 
         // Ejecuta los ejercicios de sumatoria y anagramas
-        runEjerccios();
+        runEjercicios();
     }
 
     private static void runEmpleadoExample() {
@@ -25,6 +25,7 @@ public class App {
         empleCtrl.addEmpleado(new Empleado(5, "Minta", "Abogada"));
 
         empleCtrl.imprimirEmpleados();
+        System.out.println();
 
     }
 
@@ -33,7 +34,7 @@ public class App {
     }
 
 
-    private static void runEjerccios() {
+    private static void runEjercicios() {
         Ejercicios ejercicios = new Ejercicios();
         // Test para sumatoriaDeDos
         int[] nums = { 11, 2, 7, -2 };
@@ -54,6 +55,7 @@ public class App {
         } else {
             System.out.println("No se encontraron dos números que sumen " + objetivo);
         }
+        System.out.println();
         // EJERCICIO 2
         // Test para areAnagrams
         String str1 = "listen";
@@ -63,6 +65,11 @@ public class App {
 
         str1 = "hello";
         str2 = "bello";
+        sonAnagramas = Ejercicios.areAnagrams(str1, str2);
+        System.out.println("¿Son anagramas '" + str1 + "' y '" + str2 + "'? " + sonAnagramas);
+
+        str1 = "triangle";
+        str2 = "integral";
         sonAnagramas = Ejercicios.areAnagrams(str1, str2);
         System.out.println("¿Son anagramas '" + str1 + "' y '" + str2 + "'? " + sonAnagramas);
 
